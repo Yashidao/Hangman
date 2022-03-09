@@ -1,0 +1,30 @@
+{
+    "a": [
+        "alerte",
+        "attention",
+        "amour",
+        "attache",
+        "attaque",
+        "arrondi"
+    ],
+    "b": [
+        "barbe",
+        "bonbon",
+        "bouton",
+        "bouchon",
+        "ballon",
+        "bille"
+    ],
+    "c": [
+        "constante",
+        "courant",
+        "contre",
+        "couleur",
+        "cadre",
+        "camion",
+        "corne",
+        "cadeau",
+        "cochon",
+        "colle"
+    ]
+}
