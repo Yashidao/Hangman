@@ -3,10 +3,8 @@ body {
   background-color: beige;
   text-align: center;
   figure {
-    border: 3px solid green;
     // transform: scale(0.5);
     img {
-      border: 3px solid blue;
       width: 30%;
       height: auto;
     }
@@ -14,13 +12,12 @@ body {
 
   table {
     width: 40%;
-    border: 3px solid black;
     margin: auto;
     td {
       width: 1.5em;
       height: 1.7em;
       text-align: center;
-      border: 1px solid blue;
+      border: 1px solid rgb(58, 148, 6);
     }
   }
 }
