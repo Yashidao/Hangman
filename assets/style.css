@@ -1,4 +1,29 @@
 body {
   margin: 0;
+  background-color: beige;
+  text-align: center;
+}
+
+body figure {
+  border: 3px solid green;
+}
+
+body figure img {
+  border: 3px solid blue;
+  width: 30%;
+  height: auto;
+}
+
+body table {
+  width: 40%;
+  border: 3px solid black;
+  margin: auto;
+}
+
+body table td {
+  width: 1.5em;
+  height: 1.7em;
+  text-align: center;
+  border: 1px solid blue;
 }
 /*# sourceMappingURL=style.css.map */

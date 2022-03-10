@@ -1,3 +1,26 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
+  background-color: beige;
+  text-align: center;
+  figure {
+    border: 3px solid green;
+    // transform: scale(0.5);
+    img {
+      border: 3px solid blue;
+      width: 30%;
+      height: auto;
+    }
+  }
+
+  table {
+    width: 40%;
+    border: 3px solid black;
+    margin: auto;
+    td {
+      width: 1.5em;
+      height: 1.7em;
+      text-align: center;
+      border: 1px solid blue;
+    }
+  }
 }
