@@ -3,6 +3,7 @@ const arrWords = ["rat", "attribution", "famille", "robe", "autruche", "entropie
 // ATTENTION AU ACCENTS  "considération"
 let word = arrWords[Math.round(Math.random() * arrWords.length)];
 console.log(word);
+
 // Tableau d'image 
 const arrImage = ["assets/images/Scene0.png","assets/images/Scene1.png", "assets/images/Scene2.png","assets/images/Scene3.png", "assets/images/Scene4.png","assets/images/Scene5.png", "assets/images/Scene6.png"];
 // Variable vie
@@ -34,6 +35,7 @@ for (k = 0; k < life; k++) {
 let input;
 document.getElementById("input").addEventListener("input", () => {
     input = document.getElementById("input").value;
+    input = input.toLowerCase();
 });
 
 // Je fais la validation avec 'enter'
@@ -41,26 +43,26 @@ document.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
         for (j = 0; j < word.length; j++) {
             if (input == word[j]) {
+                // ESSAYER UN TABLEAU AVEC LES VALEURS DEJA ENTREE POUR COMPARER ET SI IL Y A PAS ON CONTINUE SI IL Y A ON COMPTE UNE ERREUR
                 document.getElementsByTagName("td")[j].innerHTML = word[j];
                 win++;
                 if (win == word.length) {
                     console.log("Victoire!")
+                    // CHOISIR UNE IMAGE POUR LA VICTOIRE!
                 }
             }
-
         }
         if (!word.includes(input)) {
             document.getElementsByTagName("td")[l].innerHTML = input;
             l++;
             lose++;
             document.getElementsByTagName("img")[0].src = arrImage[lose];
-            if (lose == life) {
+            if (lose == life + 1) {
+                document.getElementById("input").disabled = true;
                 console.log("Perdu!");
             }
         }
-
         document.getElementById("input").value = "";
     }
-
     // ATTENTION PROBLEME VICTOIRE QUAND ON ECRIS LA MEME LETTRE
 });
