@@ -117,9 +117,13 @@ document.addEventListener("keyup", (event) => {
                 // ESSAYER UN TABLEAU AVEC LES VALEURS DEJA ENTREE POUR COMPARER ET SI IL Y A PAS ON CONTINUE SI IL Y A ON COMPTE UNE ERREUR
                 document.getElementsByTagName("td")[j].innerHTML = word[j];
                 win++;
+                if (win > 0 && win < 2) {
+                    found();
+                }
                 if (win == word.length) {
                     document.getElementsByTagName("img")[0].src = imgVictoire[0];
                     document.getElementById("input").disabled = true;
+                    document.getElementById("found").style.display = "none";
                     reload();
                 }
             }
@@ -131,6 +135,7 @@ document.addEventListener("keyup", (event) => {
             document.getElementsByTagName("img")[0].src = arrImage[lose];
             if (lose == life + 1) {
                 document.getElementById("input").disabled = true;
+                document.getElementById("input").setAttribute("placeholder", word);
                 reload();
             }
         }
@@ -139,6 +144,38 @@ document.addEventListener("keyup", (event) => {
     // ATTENTION PROBLEME VICTOIRE QUAND ON ECRIS LA MEME LETTRE
 });
 
+function found() {
+    let btnFound = document.createElement("button");
+    btnFound.setAttribute("id", "found");
+    document.getElementsByClassName("inputFlex")[0].appendChild(btnFound);
+    btnFound.innerHTML = "trouvé?"
+    document.getElementById("found").addEventListener('click', () => {
+        let inputFound = document.createElement("input");
+        inputFound.setAttribute("placeholder", "Une seule chance!");
+        inputFound.setAttribute("id", "oneshot");
+        document.getElementsByClassName("inputOneShot")[0].appendChild(inputFound);
+        document.addEventListener("keyup", (event) => {
+            let luck = document.getElementById("oneshot").value;
+            console.log(luck);
+            if (event.key === "Enter") {
+                document.getElementById("found").style.display = "none";
+                if (luck === word) {
+                    document.getElementsByTagName("img")[0].src = imgVictoire[0];
+                    document.getElementById("input").disabled = true;
+                    document.getElementById("oneshot").disabled = true;
+                    reload();
+                } else {
+                    document.getElementsByTagName("img")[0].src = arrImage[6];
+                    document.getElementById("input").disabled = true;
+                    document.getElementById("oneshot").disabled = true;
+                    document.getElementById("input").setAttribute("placeholder", word);
+                    reload();
+                }
+            }
+        });
+    });
+}
+
 function reload() {
     let btnReload = document.createElement("button");
     btnReload.setAttribute("type", "button");
@@ -146,7 +183,7 @@ function reload() {
     btnReload.setAttribute("id", "reload");
     document.getElementsByClassName("inputFlex")[0].appendChild(btnReload);
     btnReload.innerHTML = "encore?";
-    document.getElementById("reload").addEventListener('click', ()=>{
+    document.getElementById("reload").addEventListener('click', () => {
         location.reload();
     });
 }

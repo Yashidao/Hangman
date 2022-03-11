@@ -5,7 +5,7 @@ body {
 }
 
 body figure img {
-  width: 30%;
+  width: 40%;
   height: auto;
 }
 
@@ -19,5 +19,13 @@ body table td {
   height: 1.7em;
   text-align: center;
   border: 1px solid #3a9406;
+}
+
+body .az {
+  width: 5em;
+}
+
+body .oneshot {
+  width: 4em;
 }
 /*# sourceMappingURL=style.css.map */
