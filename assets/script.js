@@ -15,6 +15,7 @@ let m = 0;
 
 // Variable pour victoire
 let win = 0;
+let imgVictoire = ["assets/images/SceneV.png"];
 
 // Variable pour défaite
 let lose = 1;
@@ -47,6 +48,7 @@ document.addEventListener("keyup", (event) => {
                 document.getElementsByTagName("td")[j].innerHTML = word[j];
                 win++;
                 if (win == word.length) {
+                    document.getElementsByTagName("img")[0].src = imgVictoire[0];
                     console.log("Victoire!")
                     // CHOISIR UNE IMAGE POUR LA VICTOIRE!
                 }
